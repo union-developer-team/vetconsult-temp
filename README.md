@@ -15,7 +15,7 @@
 단일 Spring Boot 앱. 패키지는 도메인 모듈로만 나눈다.
 
 ```text
-src/main/java/com/louiekury/matching/
+src/main/java/com/pethealthconsult/matching/
 ├── MatchingApplication.java
 ├── request/     # consultation_request
 ├── wave/        # match_wave
@@ -31,7 +31,7 @@ src/main/java/com/louiekury/matching/
 | `db/` | 시드·DDL 참고 |
 | `.github/` | 이슈·PR 템플릿 |
 
-clinic 등 다른 도메인은 같은 앱 아래에 모듈 패키지로 추가한다. (`com.louiekury.clinic` 등)
+clinic 등 다른 도메인은 같은 앱 아래에 모듈 패키지로 추가한다. (`com.pethealthconsult.clinic` 등)
 
 ## 로컬 실행
 
@@ -45,9 +45,10 @@ clinic 등 다른 도메인은 같은 앱 아래에 모듈 패키지로 추가�
 
 ## 브랜치
 
-- `main` — 임시 통합
-- 작업: `feat/이슈번호-작업명` (규칙 레포 Git 컨벤션 따름)
-- PR 대상: 당분간 `main` (공식 레포의 `dev` 정책은 이전 후 맞춤)
+- `dev` — 통합 개발. **모든 작업 브랜치는 여기서만** 딴다
+- `main` — 실배포 직전 머지용. 일상 작업·기능 PR 금지
+- 작업: `dev` 최신화 후 `feat/이슈번호-작업명`
+- PR 대상: **`dev`만** (`main` 직행 금지)
 
 ## 주의
 

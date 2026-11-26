@@ -1,6 +1,6 @@
 spring:
   application:
-    name: vetconsult-temp
+    name: pethealthconsult
   datasource:
     url: ${MYSQL_URL:jdbc:mysql://127.0.0.1:3316/svc_matching?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul}
     username: ${MYSQL_USERNAME:vet_command}
@@ -16,7 +16,7 @@ spring:
   kafka:
     bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
     consumer:
-      group-id: ${KAFKA_CONSUMER_GROUP:vetconsult-temp}
+      group-id: ${KAFKA_CONSUMER_GROUP:pethealthconsult}
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
