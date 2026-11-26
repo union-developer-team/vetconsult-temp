@@ -1,6 +1,6 @@
 package com.pethealthconsult.matching.request.adapter.in.web;
 
-import com.pethealthconsult.matching.global.web.response.ApiResponse;
+import com.pethealthconsult.global.web.response.ApiResponse;
 import com.pethealthconsult.matching.request.adapter.in.web.dto.request.StartMatchingRequestDto;
 import com.pethealthconsult.matching.request.adapter.in.web.dto.response.ConsultationRequestResponseDto;
 import jakarta.validation.Valid;

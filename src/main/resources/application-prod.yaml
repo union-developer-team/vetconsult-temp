@@ -1,0 +1,19 @@
+# EC2 / 운영
+# 비밀번호·URI는 YAML에 두지 말고 env / Secrets만 사용한다.
+
+eureka:
+  client:
+    enabled: true
+    register-with-eureka: true
+    fetch-registry: true
+
+spring:
+  kafka:
+    listener:
+      auto-startup: true
+
+springdoc:
+  api-docs:
+    enabled: false
+  swagger-ui:
+    enabled: false

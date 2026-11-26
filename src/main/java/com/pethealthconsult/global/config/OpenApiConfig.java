@@ -1,4 +1,4 @@
-package com.pethealthconsult.matching.global.config;
+package com.pethealthconsult.global.config;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
@@ -9,11 +9,11 @@ import org.springframework.context.annotation.Configuration;
 public class OpenApiConfig {
 
     @Bean
-    public OpenAPI matchingOpenApi() {
+    public OpenAPI petHealthConsultOpenApi() {
         return new OpenAPI()
             .info(new Info()
-                .title("SHG Matching Service")
-                .description("매칭 서비스 API. Gateway Swagger(Eureka 등록 목록)에서 선택해 호출할 수 있다.")
+                .title("Pet Health Consult API")
+                .description("단일 모놀리식 백엔드 API (도메인 모듈: matching / clinic / care …)")
                 .version("v1"));
     }
 }

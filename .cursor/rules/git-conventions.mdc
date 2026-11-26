@@ -1,0 +1,15 @@
+---
+description: 팀 Git 컨벤션 (단일 레포 · dev 기준)
+alwaysApply: true
+---
+
+# Git 컨벤션
+
+상세: `docs/conventions/GIT_CONVENTIONS.md`
+
+- **레포 하나**에서 이슈·브랜치·PR
+- 커밋: `타입: 한글 설명`
+- **작업 브랜치는 무조건 `dev`에서** (`feat/이슈번호-작업명`, 이슈 승인 후). **`main`에서 분기 금지**
+- PR: `[#번호] Feature : …` · **base는 무조건 `dev`**
+- `main`은 **실배포 직전** 머지용만. 일상 작업·기능 PR에 쓰지 않음
+- PR 본문에 `Made with Cursor` 등 도구 광고·서명 푸터 **금지** (템플릿만)

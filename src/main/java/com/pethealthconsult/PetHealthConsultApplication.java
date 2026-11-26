@@ -1,4 +1,4 @@
-package com.pethealthconsult.matching;
+package com.pethealthconsult;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,9 +6,9 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-public class MatchingApplication {
+public class PetHealthConsultApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(MatchingApplication.class, args);
+        SpringApplication.run(PetHealthConsultApplication.class, args);
     }
 }

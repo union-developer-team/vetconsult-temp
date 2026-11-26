@@ -1,4 +1,4 @@
-package com.pethealthconsult.matching.shared.exception;
+package com.pethealthconsult.shared.exception;
 
 import java.util.Objects;
 import lombok.Getter;

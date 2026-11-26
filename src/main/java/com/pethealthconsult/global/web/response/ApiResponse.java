@@ -1,4 +1,4 @@
-package com.pethealthconsult.matching.global.web.response;
+package com.pethealthconsult.global.web.response;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import java.util.Objects;

@@ -1,0 +1,15 @@
+---
+description: 팀 코드 컨벤션 (모놀리식 헥사)
+alwaysApply: true
+---
+
+# 코드 컨벤션
+
+상세: `docs/conventions/CODE_CONVENTIONS.md`
+
+- **단일 레포 · 모놀리식 앱** — 도메인 모듈 + 헥사 (`domain`/`application`/`adapter`)
+- 패키지: `com.pethealthconsult.{matching|clinic|care|shared|global}`
+- MSA처럼 모듈을 별도 서비스·레포로 쪼개지 않음
+- SOLID / 불필요 static 금지 / Setter·AllArgs 거의 금지
+- 다른 팀원 코드 임의 수정 금지 — 구별: 이슈/PR 담당 → 모듈 소유 → `git blame`/`git log` → 열린 브랜치. 애매하면 질문
+- API 명세는 `docs` **도메인별**

@@ -18,4 +18,9 @@ public class MatchWavePersistenceAdapter implements SaveMatchWavePort {
         );
         return MatchWavePersistenceMapper.toDomain(saved);
     }
+
+    @Override
+    public boolean existsByRequestIdAndWaveNo(Long requestId, int waveNo) {
+        return matchWaveJpaRepository.existsByRequestIdAndWaveNo(requestId, waveNo);
+    }
 }

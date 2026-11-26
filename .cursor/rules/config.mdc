@@ -1,0 +1,13 @@
+---
+description: 설정 컨벤션 (local/dev/prod)
+alwaysApply: true
+---
+
+# 설정
+
+상세: `docs/conventions/CONFIG.md` · 앱 README
+
+- **앱 하나** 기동·배포 (MSA 다중 프로세스 아님)
+- 프로필 local/dev/prod · 비밀값은 env·Secrets
+- 공용 MySQL·Kafka·Mongo · 스키마는 도메인 논리 분리
+- `local` 기본: Eureka OFF + Docker Desktop 인프라

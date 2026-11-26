@@ -10,8 +10,8 @@ import static org.mockito.Mockito.when;
 
 import com.pethealthconsult.matching.offer.domain.MatchOffer;
 import com.pethealthconsult.matching.offer.domain.MatchOfferStatus;
-import com.pethealthconsult.matching.shared.exception.BusinessException;
-import com.pethealthconsult.matching.shared.exception.ErrorCode;
+import com.pethealthconsult.shared.exception.BusinessException;
+import com.pethealthconsult.shared.exception.ErrorCode;
 import com.pethealthconsult.matching.wave.application.model.CreateWaveOffersResult;
 import com.pethealthconsult.matching.wave.application.model.MatchRequestSnapshot;
 import com.pethealthconsult.matching.wave.application.port.out.LoadMatchRequestPort;
@@ -50,6 +50,7 @@ class CreateWaveOffersServiceTest {
     void createsWaveAndOffersWhenMatching() {
         when(loadMatchRequestPort.findByUuid("rq-1"))
             .thenReturn(Optional.of(MatchRequestSnapshot.of(10L, "rq-1", "MATCHING")));
+        when(saveMatchWavePort.existsByRequestIdAndWaveNo(10L, 1)).thenReturn(false);
 
         when(saveMatchWavePort.save(any(MatchWave.class))).thenAnswer(invocation -> {
             MatchWave wave = invocation.getArgument(0);
@@ -140,5 +141,24 @@ class CreateWaveOffersServiceTest {
         );
         assertEquals(ErrorCode.VALIDATION_ERROR, ex.getErrorCode());
         verifyNoInteractions(saveMatchWavePort, saveMatchOffersPort);
+    }
+
+    @Test
+    @DisplayName("동일 waveNo가 있으면 CONFLICT")
+    void conflictWhenWaveNoExists() {
+        when(loadMatchRequestPort.findByUuid("rq-1"))
+            .thenReturn(Optional.of(MatchRequestSnapshot.of(10L, "rq-1", "MATCHING")));
+        when(saveMatchWavePort.existsByRequestIdAndWaveNo(10L, 1)).thenReturn(true);
+
+        BusinessException ex = assertThrows(
+            BusinessException.class,
+            () -> createWaveOffersService.createWaveOffers(
+                CreateWaveOffersCommand.of("rq-1", 1, 3000, List.of(
+                    OfferCandidate.of("vet-1", "hosp-1", 100, new BigDecimal("1.00"))
+                ))
+            )
+        );
+        assertEquals(ErrorCode.CONFLICT, ex.getErrorCode());
+        verifyNoInteractions(saveMatchOffersPort);
     }
 }

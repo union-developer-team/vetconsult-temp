@@ -1,0 +1,13 @@
+# DEV 노트북 / 통합 환경
+# Eureka·Gateway를 쓰는 경우 env로 defaultZone을 덮어쓴다.
+
+eureka:
+  client:
+    enabled: true
+    register-with-eureka: true
+    fetch-registry: true
+
+spring:
+  kafka:
+    listener:
+      auto-startup: true

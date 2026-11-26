@@ -1,0 +1,20 @@
+---
+description: Pet Health Consult 팀 컨벤션 인덱스 (모놀리식·단일 레포)
+alwaysApply: true
+---
+
+# 팀 컨벤션
+
+폴더: `docs/conventions/` (또는 공유 레포 vetconsult-team-conventions)
+
+**단일 레포 · 모놀리식(헥사 모듈).** MSA·멀티 서비스 레포가 아니다.
+패키지 루트: `com.pethealthconsult`
+
+| 문서 | 용도 |
+|------|------|
+| `CODE_CONVENTIONS.md` | 코드·패키지 규칙 |
+| `GIT_CONVENTIONS.md` | Git·PR (`dev`에서만 작업) |
+| `CONFIG.md` | local/dev/prod |
+| `README.md` | 앱 README / 패키지 구조 |
+
+원본 `.md`는 이동·삭제하지 않는다.

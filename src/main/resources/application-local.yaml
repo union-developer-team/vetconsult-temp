@@ -1,0 +1,14 @@
+# 개인 PC + Docker Desktop (MySQL / Kafka / Mongo)
+# Eureka·Gateway 없이 앱만 띄울 때 기본값
+
+eureka:
+  client:
+    enabled: false
+    register-with-eureka: false
+    fetch-registry: false
+
+# 로컬에서 Kafka 리스너가 없어도 기동은 유지
+spring:
+  kafka:
+    listener:
+      auto-startup: false

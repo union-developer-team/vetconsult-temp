@@ -9,6 +9,7 @@ import com.pethealthconsult.matching.offer.adapter.out.persistence.MatchOfferPer
 import com.pethealthconsult.matching.offer.domain.MatchOfferStatus;
 import com.pethealthconsult.matching.request.adapter.out.persistence.ConsultationRequestJpaEntity;
 import com.pethealthconsult.matching.request.adapter.out.persistence.ConsultationRequestJpaRepository;
+import com.pethealthconsult.matching.request.adapter.out.persistence.MatchRequestLoadAdapter;
 import com.pethealthconsult.matching.wave.application.createwaveoffers.CreateWaveOffersCommand;
 import com.pethealthconsult.matching.wave.application.createwaveoffers.CreateWaveOffersService;
 import com.pethealthconsult.matching.wave.application.createwaveoffers.OfferCandidate;

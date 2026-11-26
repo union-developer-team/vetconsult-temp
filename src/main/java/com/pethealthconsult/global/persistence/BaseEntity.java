@@ -1,4 +1,4 @@
-package com.pethealthconsult.matching.global.persistence;
+package com.pethealthconsult.global.persistence;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EntityListeners;

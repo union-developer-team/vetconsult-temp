@@ -1,14 +1,14 @@
 package com.pethealthconsult.matching.request.adapter.in.web;
 
-import com.pethealthconsult.matching.global.web.response.ApiResponse;
+import com.pethealthconsult.global.web.response.ApiResponse;
 import com.pethealthconsult.matching.request.adapter.in.web.dto.request.StartMatchingRequestDto;
 import com.pethealthconsult.matching.request.adapter.in.web.dto.response.ConsultationRequestResponseDto;
 import com.pethealthconsult.matching.request.application.model.ConsultationRequestResult;
 import com.pethealthconsult.matching.request.application.startmatching.StartMatchingCommand;
 import com.pethealthconsult.matching.request.application.startmatching.StartMatchingUseCase;
 import com.pethealthconsult.matching.request.domain.ConsultationRequestStatus;
-import com.pethealthconsult.matching.shared.exception.BusinessException;
-import com.pethealthconsult.matching.shared.exception.ErrorCode;
+import com.pethealthconsult.shared.exception.BusinessException;
+import com.pethealthconsult.shared.exception.ErrorCode;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Profile;
 import org.springframework.http.ResponseEntity;

@@ -1,0 +1,22 @@
+---
+description: PR/이슈 본문에 Made with Cursor 등 도구 푸터 금지
+alwaysApply: true
+---
+
+# PR·이슈 본문
+
+`gh pr create` / 이슈 작성 시 본문에 다음을 **절대 넣지 않는다.**
+
+- `Made with Cursor`
+- `Made with [Cursor](https://cursor.com)`
+- 그 외 AI/에디터 광고·서명 푸터
+
+PR·이슈 본문은 팀 템플릿과 작업 설명만 작성한다.
+
+## 중요 (Cursor 자동 첨부)
+
+플랫폼이 create 직후 본문 끝에 `Made with Cursor`를 **자동으로 붙일 수 있다.**
+에이전트가 HEREDOC에 안 넣어도 생길 수 있다.
+
+**대응 (필수):** `gh pr create`가 성공하면 바로 본문을 확인하고, 푸터가 있으면 `gh pr edit <번호> --body`로 **제거한 뒤** 사용자에게 URL을 알려준다.
+생성만 하고 푸터를 남긴 채 끝내지 않는다.

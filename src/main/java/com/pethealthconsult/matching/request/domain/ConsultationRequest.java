@@ -1,7 +1,7 @@
 package com.pethealthconsult.matching.request.domain;
 
-import com.pethealthconsult.matching.shared.exception.BusinessException;
-import com.pethealthconsult.matching.shared.exception.ErrorCode;
+import com.pethealthconsult.shared.exception.BusinessException;
+import com.pethealthconsult.shared.exception.ErrorCode;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Objects;

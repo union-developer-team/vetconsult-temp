@@ -1,8 +1,8 @@
 package com.pethealthconsult.matching.wave.application.createwaveoffers;
 
 import com.pethealthconsult.matching.offer.domain.MatchOffer;
-import com.pethealthconsult.matching.shared.exception.BusinessException;
-import com.pethealthconsult.matching.shared.exception.ErrorCode;
+import com.pethealthconsult.shared.exception.BusinessException;
+import com.pethealthconsult.shared.exception.ErrorCode;
 import com.pethealthconsult.matching.wave.application.model.CreateWaveOffersResult;
 import com.pethealthconsult.matching.wave.application.model.MatchRequestSnapshot;
 import com.pethealthconsult.matching.wave.application.port.out.LoadMatchRequestPort;
@@ -60,6 +60,13 @@ public class CreateWaveOffersService implements CreateWaveOffersUseCase {
             throw new BusinessException(
                 ErrorCode.VALIDATION_ERROR,
                 "차수당 offer는 최대 " + MAX_OFFERS_PER_WAVE + "건입니다."
+            );
+        }
+
+        if (saveMatchWavePort.existsByRequestIdAndWaveNo(request.getId(), command.getWaveNo())) {
+            throw new BusinessException(
+                ErrorCode.CONFLICT,
+                "이미 존재하는 wave 차수입니다. waveNo=" + command.getWaveNo()
             );
         }
 

@@ -1,4 +1,4 @@
-package com.pethealthconsult.matching.shared.exception;
+package com.pethealthconsult.shared.exception;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 public enum ErrorCode {
 
     VALIDATION_ERROR("요청 값이 올바르지 않습니다."),
+    CONFLICT("이미 존재하는 리소스입니다."),
     UNAUTHORIZED("인증이 필요합니다."),
     FORBIDDEN("접근 권한이 없습니다."),
     NOT_FOUND("대상을 찾을 수 없습니다."),

@@ -1,6 +1,8 @@
 spring:
   application:
-    name: pethealthconsult
+    name: pet-health-consult-be
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:local}
   datasource:
     url: ${MYSQL_URL:jdbc:mysql://127.0.0.1:3316/svc_matching?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul}
     username: ${MYSQL_USERNAME:vet_command}
@@ -16,27 +18,28 @@ spring:
   kafka:
     bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
     consumer:
-      group-id: ${KAFKA_CONSUMER_GROUP:pethealthconsult}
+      group-id: ${KAFKA_CONSUMER_GROUP:pet-health-consult-be}
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
+  data:
+    mongodb:
+      uri: ${MONGODB_URI:mongodb://127.0.0.1:27017/vetconsult}
 
 server:
-  port: ${SERVER_PORT:8082}
+  port: ${SERVER_PORT:8080}
 
 eureka:
   client:
     service-url:
       defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE:http://localhost:8761/eureka/}
-    register-with-eureka: true
-    fetch-registry: true
   instance:
     prefer-ip-address: true
+    appname: ${spring.application.name}
 
-# Gateway Swagger가 Eureka 경유 /{service-id}/v3/api-docs 로 가져간다.
 springdoc:
   api-docs:
     path: /v3/api-docs

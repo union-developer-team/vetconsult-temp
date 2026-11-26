@@ -10,8 +10,8 @@ import com.pethealthconsult.matching.request.application.port.out.ClaimConsultat
 import com.pethealthconsult.matching.request.application.port.out.LoadConsultationRequestPort;
 import com.pethealthconsult.matching.request.domain.ConsultationRequest;
 import com.pethealthconsult.matching.request.domain.ConsultationRequestStatus;
-import com.pethealthconsult.matching.shared.exception.BusinessException;
-import com.pethealthconsult.matching.shared.exception.ErrorCode;
+import com.pethealthconsult.shared.exception.BusinessException;
+import com.pethealthconsult.shared.exception.ErrorCode;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Optional;

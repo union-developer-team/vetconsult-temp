@@ -1,6 +1,6 @@
 package com.pethealthconsult.matching.wave.adapter.in.web;
 
-import com.pethealthconsult.matching.global.web.response.ApiResponse;
+import com.pethealthconsult.global.web.response.ApiResponse;
 import com.pethealthconsult.matching.wave.adapter.in.web.dto.request.CreateWaveOffersRequestDto;
 import com.pethealthconsult.matching.wave.adapter.in.web.dto.response.CreateWaveOffersResponseDto;
 import jakarta.validation.Valid;
